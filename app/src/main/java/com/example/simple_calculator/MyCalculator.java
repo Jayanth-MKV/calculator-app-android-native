@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MyCalculator extends AppCompatActivity implements View.OnClickListener {
 
-    TextView c,X,one,two,three,four,five,six,seven,eight,nine,zero,dzero,perc,div,mul,add,sub,dot,equal,res,display;
-    String s1="",s2="",s3="",s4="",s5="",s6="",s7="",s8="",s9="",s0="",s00="",sp="",sa="",ss="",sd="",sm="",sdot="";
+    TextView c,X,one,two,three,four,five,six,seven,eight,nine,zero,b1,b2,perc,div,mul,add,sub,dot,equal,res,display;
+    String s1="",s2="",s3="",s4="",s5="",s6="",s7="",s8="",s9="",s0="",s00="",sa="",sb="",sdot="";
     String r3="";
     boolean is=false;
     boolean set=false;
@@ -32,7 +32,8 @@ public class MyCalculator extends AppCompatActivity implements View.OnClickListe
         eight=findViewById(R.id.t8);
         nine=findViewById(R.id.t9);
         zero=findViewById(R.id.t0);
-        dzero=findViewById(R.id.t00);
+        b1=findViewById(R.id.ta);
+        b2=findViewById(R.id.tb);
         perc=findViewById(R.id.p);
         div=findViewById(R.id.d);
         mul=findViewById(R.id.m);
@@ -57,7 +58,8 @@ public class MyCalculator extends AppCompatActivity implements View.OnClickListe
         eight.setOnClickListener(this);
         nine.setOnClickListener(this);
         zero.setOnClickListener(this);
-        dzero.setOnClickListener(this);
+        b1.setOnClickListener(this);
+        b2.setOnClickListener(this);
         perc.setOnClickListener(this);
         div.setOnClickListener(this);
         mul.setOnClickListener(this);
@@ -161,10 +163,16 @@ public class MyCalculator extends AppCompatActivity implements View.OnClickListe
                 r3=r3+s0;
                 display.setText(r3);
                 break;
-            case R.id.t00:
-                s00="";
-                s00 = s00 + "00";
-                r3=r3+s00;
+            case R.id.ta:
+                sa="";
+                sa = sa + "(";
+                r3=r3+sa;
+                display.setText(r3);
+                break;
+            case R.id.tb:
+                sb="";
+                sb = sb + ")";
+                r3=r3+sb;
                 display.setText(r3);
                 break;
             case R.id.a:
