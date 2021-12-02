@@ -258,6 +258,10 @@ public class MyCalculator extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.e:
+                Log.e("is:",String.valueOf(is));
+                if(r3.length()==0){
+                    is=true;
+                }
                 if (!is) {
                     if(r3.charAt(r3.length()-1)=='+') {
                         r3 = r3 + 0;
@@ -459,7 +463,7 @@ public class MyCalculator extends AppCompatActivity implements View.OnClickListe
                 case '*':
                     return a * b;
                 case '%':
-                    return a%b;
+                    return (a*b)/100;
                 case '/':
                     if (b == 0)
                     {
