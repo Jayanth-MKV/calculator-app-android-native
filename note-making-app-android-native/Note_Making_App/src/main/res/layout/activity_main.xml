@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text_mynotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/my_notes"
+        android:fontFamily="@font/ubuntu_bold"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchlinearlayout"
+        android:background="@color/searchbackground"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@+id/text_mynotes"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/searchicon"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_search"
+            app:tint="@color/colorSearchicon"
+            android:contentDescription="@string/app_name"
+            />
+        <EditText
+            android:id="@+id/searchedittext"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:hint="@string/search_notes"
+            android:fontFamily="@font/ubuntu_regular"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textColorHint="@color/colorHinttext"
+            android:background="@null"
+            android:textSize="@dimen/_14sdp"
+            />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:clipToPadding="false"
+        android:paddingStart="0dp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutQAB"
+        app:layout_constraintTop_toBottomOf="@+id/searchlinearlayout"
+        android:id="@+id/recyclerview"
+        />
+
+    <LinearLayout
+        android:id="@+id/layoutQAB"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_5sdp"
+        android:background="@color/colorQAB"
+        >
+<!--        <ImageView-->
+<!--            android:id="@+id/outlineadd"-->
+<!--            android:layout_width="@dimen/_25sdp"-->
+<!--            android:layout_height="@dimen/_25sdp"-->
+<!--            android:src="@drawable/ic_add_outline"-->
+<!--            app:tint="@color/colorIcons"-->
+<!--            android:layout_margin="@dimen/_10sdp"-->
+<!--            />-->
+<!--        <ImageView-->
+<!--            android:id="@+id/imageadd"-->
+<!--            android:layout_width="@dimen/_25sdp"-->
+<!--            android:layout_height="@dimen/_25sdp"-->
+<!--            android:src="@drawable/ic_image"-->
+<!--            app:tint="@color/colorIcons"-->
+<!--            android:layout_margin="@dimen/_10sdp"-->
+<!--            />-->
+<!--        <ImageView-->
+<!--            android:id="@+id/weblinkadd"-->
+<!--            android:layout_width="@dimen/_25sdp"-->
+<!--            android:layout_height="@dimen/_25sdp"-->
+<!--            android:src="@drawable/ic_web"-->
+<!--            app:tint="@color/colorIcons"-->
+<!--            android:layout_margin="@dimen/_10sdp"-->
+<!--            />-->
+    </LinearLayout>
+
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:layout_width="@dimen/_40sdp"-->
+<!--        android:layout_height="@dimen/_40sdp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/layoutQAB"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        android:contentDescription="TODO" />-->
+
+    <ImageView
+        android:id="@+id/fab"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:src="@drawable/ic_add"
+        android:background="@drawable/background_add"
+        app:tint="@color/black"
+        android:padding="@dimen/_3sdp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutQAB"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_45sdp"
+        app:layout_constraintTop_toTopOf="@+id/layoutQAB"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
